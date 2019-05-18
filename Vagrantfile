@@ -83,6 +83,11 @@ Vagrant.configure("2") do |config|
     v.cpus = 2
     v.linked_clone = true
     override.vm.network :private_network, ip: "192.168.99.90", gateway: "192.168.99.1"
+    override.vm.network "forwarded_port", guest: 10000, host: 10000
+    override.vm.network "forwarded_port", guest: 10001, host: 10001
+    override.vm.network "forwarded_port", guest: 10002, host: 10002
+    override.vm.network "forwarded_port", guest: 10003, host: 10003
+    override.vm.network "forwarded_port", guest: 10004, host: 10004
   end
 
   config.vm.provider "hyperv" do |v|

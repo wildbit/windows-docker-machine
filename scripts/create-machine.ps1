@@ -341,3 +341,7 @@ Start-Service docker
 
 Write-Host "Opening Docker TLS port"
 & netsh advfirewall firewall add rule name="Docker TLS" dir=in action=allow protocol=TCP localport=2376
+
+Write-Host "Updating host-file to resolve dev resources hosted on mac..."
+Add-Content "C:\Windows\System32\drivers\etc\hosts" "192.168.99.1 dev-resources.internal.postmark-testing.com"
+Add-Content "C:\Windows\System32\drivers\etc\hosts" "192.168.99.1 test-resources.internal.postmark-testing.com"
