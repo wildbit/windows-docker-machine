@@ -88,6 +88,10 @@ Vagrant.configure("2") do |config|
     override.vm.network "forwarded_port", guest: 10002, host: 10002
     override.vm.network "forwarded_port", guest: 10003, host: 10003
     override.vm.network "forwarded_port", guest: 10004, host: 10004
+    override.vm.network "forwarded_port", guest: 10004, host: 10004
+    override.vm.network "forwarded_port", guest: 80, host: 10000, host_ip: "192.168.99.90"
+    override.vm.network "forwarded_port", guest: 2525, host: 2525, host_ip: "192.168.99.90"
+    override.vm.network "forwarded_port", guest: 2526, host: 2625, host_ip: "192.168.99.90"
   end
 
   config.vm.provider "hyperv" do |v|
